@@ -1,0 +1,37 @@
+<div class="main_container">
+  <h3>スケジュール詳細</h3>
+  
+  <table>
+    <tbody>
+      <tr>
+        <th>タイトル</th>
+        <td><%= @post.title %></td>
+      </tr>
+      <tr>
+        <th>開始日</th>
+        <td><%= @post.start_at %></td>
+      </tr>
+      <tr>
+        <th>終了日</th>
+        <td><%= @post.end_at %></td>
+      </tr>
+      <tr>
+        <th>終日</th>
+        <td><%= @post.all_day %></td>
+      </tr>
+      <tr>
+        <th>スケジュールメモ</th></th>
+        <td><%= @post.memo %></td>
+      </tr>
+    </tbody>
+  </table>
+  <ul>
+    <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
+    <li><%= link_to "スケジュールを編集する" %></li>
+    <li><%= link_to "スケジュールを削除" %></li>
+  </ul>
+</div>
+
+<footer>
+  <h1><%= "現在の日時 : #{ Date.current&.strftime('%Y年%m月%d日') }" %></h1>
+</footer>
