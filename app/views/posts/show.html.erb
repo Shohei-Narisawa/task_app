@@ -17,7 +17,12 @@
       </tr>
       <tr>
         <th>終日</th>
-        <td><%= @post.all_day %></td>
+        <td><% if @post.all_day == true %>
+                            ○
+                        <% else %>
+                              
+                        <% end %>
+        </td>
       </tr>
       <tr>
         <th>スケジュールメモ</th></th>
@@ -27,8 +32,8 @@
   </table>
   <ul>
     <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
-    <li><%= link_to "スケジュールを編集する" %></li>
-    <li><%= link_to "スケジュールを削除" %></li>
+    <li><%= link_to "スケジュールを編集する", [:edit, @post] %></li>
+    <li><%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除しますか？" } %></li>
   </ul>
 </div>
 

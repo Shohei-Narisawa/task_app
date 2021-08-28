@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
   
   def new
-    @posts = Post.all
+    @post = Post.new
     
   end
   
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find_by(id: params[:id])
-    if @post.update(title: params[:title], start_at: params[:start_at], end_at: params[:end_at], all_day: params[:all_day], memo: params[:end])
+    if @post.update(params.require(:post).permit(:title, :start_at, :end_at, :all_day, :end))
       flash[:notice] = "スケジュールを更新しました"
       redirect_to :posts
     else
@@ -38,5 +38,8 @@ class PostsController < ApplicationController
   end
   
   def destroy
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
+    redirect_to :posts
   end
 end
