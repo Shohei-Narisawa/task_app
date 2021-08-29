@@ -15,6 +15,7 @@ class PostsController < ApplicationController
       flash[:notice] = "スケジュールを登録しました"
       redirect_to :posts
     else
+      flash[:alert] = "スケジュールを登録できませんでした"
       render "new"
     end
   end
@@ -33,6 +34,7 @@ class PostsController < ApplicationController
       flash[:notice] = "スケジュールを更新しました"
       redirect_to :posts
     else
+      flash[:alert] = "スケジュールを更新できませんでした"
       render "edit"
     end
   end
@@ -40,6 +42,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
+    flash[:alert] = "スケジュールを削除しました"
     redirect_to :posts
   end
 end

@@ -17,6 +17,7 @@ footer{
 
 table{
   border-collapse: collapse;
+  margin-bottom: 16px;
 }
 
 table td{
@@ -39,4 +40,40 @@ table th{
   padding: 15px;
   width: 400px;
   text-align: center;
+}
+
+.alert{
+  background-color: #ec98ac8f;
+  border: 2px solid #ec7592;
+  padding: 15px;
+  width: 400px;
+  text-align: center;
+}
+
+.form-error{
+  margin: 16px;
+}
+
+li{
+  list-style: none;
+}
+
+
+textarea{
+  width: 350px;
+  height: 200px;
+  
+}
+
+td > input, .field_with_errors > input{
+  width: 100%;
+  padding: 5px;
+  }
+
+input{
+  font-size: 16px;
+}
+
+a{
+  text-decoration: none;
 }

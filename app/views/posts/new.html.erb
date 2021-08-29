@@ -1,5 +1,15 @@
 <div class="main_container">
   <h2>スケジュール新規作成</h2>
+  
+  <% if flash.alert %>
+    <p class="alert"><%= flash.alert %></p>
+  <% end %>
+    
+  <% @post.errors.full_messages.each do |message| %>
+    <div class="form-error">
+      <%= message %>
+    </div>
+  <% end %>
 
   <%= form_with url: "/posts/create", local: true do |f| %>
   <table>
@@ -34,7 +44,7 @@
   
   <div>
     <ul>
-      <li><%= f.submit "登録完了する" %></li>
+      <li><%= f.submit "スケジュールを新規登録する" %></li>
       <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
     </ul>
   </div>
